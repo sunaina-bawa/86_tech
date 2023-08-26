@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import UserList from "./Component/UserList";
 import PostList from "./Component/PostList";
@@ -14,30 +14,24 @@ function App() {
   return (
     <div className="app">
       <Navbar />
-      <UserForm />
+      {/* <UserForm />
       <PostForm />
       <UserList />
       <PostList />
       <UserAnalytics />
-      <PostAnalytics />
+      <PostAnalytics /> */}
 
-      {/* <Router>
-        <Route path="/" exact>
-          <UserForm />
-        </Route>
-        <Route path="/users">
-          <UserList />
-        </Route>
-        <Route path="/posts">
-          <PostList />
-        </Route>
-        <Route path="/analytics/users">
-          <UserAnalytics />
-        </Route>
-        <Route path="/analytics/posts">
-          <PostAnalytics />
-        </Route>
-      </Router> */}
+      <Routes>
+        <Route path="/" element={<UserForm />} />
+        <Route path="/postform" element={<PostForm />} />
+        <Route path="/users" element={<UserList />} />
+
+        <Route path="/posts" element={<PostList />} />
+
+        <Route path="/analytics/users" element={<UserAnalytics />} />
+
+        <Route path="/analytics/posts" element={<PostAnalytics />} />
+      </Routes>
     </div>
   );
 }

@@ -9,14 +9,17 @@ const cors = require("cors");
 
 const app = express();
 app.use(cors());
-const PORT = process.env.PORT || 8967;
+const PORT = process.env.PORT || 8999;
 
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb://localhost:27017/social-media", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb+srv://bawasunaina6:sunaina97@cluster0.p7xyoak.mongodb.net/?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 // Define validation rules for user input
 const validateUserInput = [
